@@ -7,30 +7,26 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  console.log("Hello Rigo from the console!");
+  document.querySelector(".name").innerHTML = newDomain();
 };
 
 function newDomain() {
+  let pronouns = ["the", "your"];
+  let adjs = ["bestest", "ultimate"];
+  let nouns = ["companion", "sidekick"];
+  let domains = [".com", ".net", ".org"];
 
-  let pronouns = ['the', 'your'];
-  let adjs = ['bestest', 'ultimate'];
-  let nouns = ['companion', 'sidekick'];
-  let domains = ['.com', ".net", ".org"];
-
+ let key = ""
 
   for (let pronoun of pronouns) {
-    console.log(pronoun);
+    for (let adj of adjs) {
+      for (let noun of nouns) {
+        for (let domain of domains) {
+          key += pronoun + adj + noun + domain + "<br>";
+        }
+      }
+    }
   }
-  for (let adj of adjs) {
-    console.log(adj);
-  }
-  for (let noun of nouns) {
-    console.log(noun);
-  }
-  for (let domain of domains) {
-    console.log(domain);
-  }
+
+  return key;
 }
-
-console.log (newDomain);
-
